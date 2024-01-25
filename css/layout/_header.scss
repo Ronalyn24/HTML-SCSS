@@ -1,0 +1,306 @@
+.skip {
+  position: absolute;
+  top: -400px;
+  left: 0;
+  right: 0;
+  font-size: 22px;
+  z-index: 9999;
+  margin: 0 auto;
+  max-width: 270px;
+  width: 100%;
+  -webkit-transition: none;
+  transition: none;
+  color: $color-white;
+  padding: 15px 15px;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: 500;
+  background-color: $color-black;
+  background-image: linear-gradient(0deg, $color-black 0%, #838383 100%);
+}
+
+.skip:focus {
+  top: 12vh;
+}
+
+
+.header-ctner {
+  position: fixed;
+  padding: 15px 9%;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  background: $color-white;
+
+  @include responsive(med-desktop) {
+    padding: 15px 4%;
+  }
+
+  &__wrap {
+    @include flex;
+    @include justify-space-between;
+    position: relative;
+    margin: 0 auto;
+    @include align-items-center;
+  }
+
+  .forDesktop {
+    @include responsive(tablet-landscape){
+      display: none;
+    }
+  }
+
+  .forMobile {
+    display: none;
+
+    @include responsive(tablet-landscape){
+      display: block;
+    }
+  }
+
+  .siteLogo {
+    display: block;
+    width: 144px !important;
+  }
+
+  // FOR MOBILE
+
+  &__menuBarIcon {
+
+    span {
+        display: block;
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        background: $color-black;
+        opacity: 1;
+        left: 0;
+        @include transform(rotate(0deg));
+        @include transition-25s;
+  
+        &:nth-child(1) {
+            top: 0px;
+        }
+  
+        &:nth-child(2) {
+            top: 10px;
+        }
+  
+        &:nth-child(3) {
+            top: 20px;
+        }
+    }
+  }
+
+  &__siteLogo {
+    img {
+      z-index: 999;
+      position: relative;
+      width: 144px;
+
+      @include responsive(phone-landscape){
+        width: 100px;
+      }
+    }
+  }
+}
+
+
+// BUGHER MENU
+
+#nav-bugher {
+  position: fixed;
+  width: 42px;
+  height: 30px;
+  @include transform(rotate(0deg));
+  @include transition-5s;
+  cursor: pointer;
+  z-index: 999;
+  display: block;
+  right: 0;
+  top: 0;
+  margin-top: 30px;
+  margin-right: 4%;
+
+  @include responsive(phone-landscape){
+    margin-top: 22px;
+  }
+
+  .open-menu & {
+
+    span {
+
+      &:nth-child(1) {
+          top: 18px;
+          @include transform(rotate(135deg));
+      }
+      &:nth-child(2) {
+          opacity: 0;
+          left: -60px;
+          visibility: hidden;
+      }
+      &:nth-child(3) {
+          top: 18px;
+          @include transform(rotate(-135deg));
+      }
+    }
+
+    .menu-bar-icon {
+        right: 70px;
+        top: 33px;
+        position: fixed;
+    }
+  }
+}
+
+
+
+// GEN PRIMARY MENU
+
+.pri-menu {
+  @include flex;
+
+  @include responsive(tablet-landscape){
+    flex-direction: column;
+  }
+
+  &__menu-item {
+    
+    &:hover ul,
+    &:focus ul,
+    &:focus-within ul,
+    & a:focus + ul {
+        visibility: visible;
+        opacity: 1;
+        display: block;
+    }
+    
+    a {
+      padding: 20px 0;
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 15px;
+    }
+
+    &.active a {
+      font-family: $maison-neue-bold;
+    }
+  }
+
+  &--left {
+    width: 30%;
+
+    @include responsive(med-desktop) {
+      width: 35%;
+    }
+
+    li {
+      margin-right: 40px;
+
+      @include responsive(very-small-desktop){
+        margin-right: 25px;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &--middle {
+    width: 40%;
+    @include justify-center;
+
+    @include responsive(med-desktop) {
+      width: 30%;
+    }
+  }
+
+  &--right {
+    width: 30%;
+    @include justify-end;
+
+    @include responsive(med-desktop) {
+      width: 35%;
+    }
+
+    li {
+      margin-left: 40px;
+
+      @include responsive(very-small-desktop){
+        margin-left: 25px;
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  // this is for the MOBILE VIEW
+
+  &--mobile {
+    @include flex;
+
+    @include responsive(tablet-landscape){
+        width: 100%;
+        max-width: 100%;
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        z-index: 99;
+        top: 0;
+        left: 0;
+        padding: 7rem 2rem;
+        color: $color-black;
+        background-color: $color-white;
+        height: 100vh;
+        text-align: left;
+        @include transform(translateY(-100%));
+        @include transition-2s-ease-in-out;
+    }
+
+    @include responsive(tablet-landscape){
+        flex-direction: column;
+    }
+
+    .open-menu & {
+
+        @include responsive(tablet-landscape){
+            visibility: visible;
+            opacity: 1;
+            -webkit-transform: translateY(0);
+            -ms-transform: translateY(0);
+            transform: translateY(0);
+            height: 100%;
+            position: fixed;
+            max-width: 100%;
+            overflow: scroll;
+        }
+    }
+
+    li {
+      a {
+          text-transform: uppercase;
+          font-weight: 900;
+          display: block;
+          padding: 22px 0;
+          font-size: 20px;
+          text-align: center;
+
+          @include responsive(phone-landscape){
+            padding: 15px 0;
+          }
+      }
+    }
+  }
+}
+
+
+
+
+

@@ -1,0 +1,173 @@
+.secOurTeam {
+  .mid-headline-bold {
+    margin-bottom: 0;
+  }
+
+  &__intro {
+    @include responsive(x-med-desktop) {
+      max-width: 750px;
+      font-size: 22px !important;
+    }
+  }
+}
+
+.ourTeam {
+  padding: 47px 0 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 5rem;
+  text-align: center;
+
+  @include responsive(tablet-portrait){
+    row-gap: 4rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include responsive(small-phone-landscape){
+    row-gap: 3rem;
+  }
+
+  @include responsive(phone-medium){
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  &__item {
+    @include flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: relative;
+    padding-bottom: 4rem;
+  }
+
+  &__plusIcon {
+    width: 35.34px;
+    z-index: 99;
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    cursor: pointer;
+
+    @include responsive(phone-landscape){
+      width: 25px;
+      top: 15px;
+      right: 15px;
+    }
+  }
+
+  &__thumbnail {
+    margin-bottom: 25px;
+    position: relative;
+    padding-top: 110%;
+    border: 1px solid $color-black;
+    border-left: 0;
+
+    .team-item-1 & {
+      border-left: 1px solid $color-black;
+    }
+  }
+
+  &__img {
+    @include image-object-fit;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 42px;
+    line-height: 46px;
+    padding: 5px 0 30px;
+
+    @include responsive(small-desktop){
+      font-size: 30px;
+      line-height: 36px;
+    }
+
+    @include responsive(phone-landscape){
+      font-size: 28px;
+      line-height: 30px;
+      padding: 5px 0 15px;
+    }
+
+    @include responsive(small-phone-landscape){
+      font-size: 23px;
+      padding: 0 0 10px;
+    }
+
+    br {
+      @include responsive(tablet-portrait){
+        display: none;
+      }
+    }
+  }
+
+  &__btn.social-link {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border-top: 1px solid $color-black-2;
+    border-bottom: 1px solid $color-black-2;
+    padding: 20px 10px;
+    color: $color-black-3;
+    font-size: 16px;
+    @include transition-linear-2s;
+
+    &:hover {
+      font-family: $maison-neue-bold;
+      color: $color-black;
+    }
+  }
+}
+
+
+// testimonials
+
+.aw-row-fullwidth.rowTestimonial {
+  padding: 12rem 9% 2rem;
+
+  @include responsive(tablet-portrait){
+    padding: 6rem 9% 2rem;
+  }
+
+  @include responsive(phone-landscape){
+    padding: 4rem 9% 2rem;
+  }
+
+  .p-mid-thin {
+    line-height: 40px;
+    position: relative;
+    margin-bottom: 3rem;
+
+    @include responsive(phone-landscape){
+      line-height: 33px;
+    }
+
+    @include responsive(phone-portrait){
+      line-height: 30px;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 1px;
+      width: 188px;
+      background: $color-black;
+      margin: 0 auto;
+      top: -65px;
+
+      @include responsive(tablet-portrait){
+        display: none;
+      }
+    }
+  }
+
+  .mid-headline-bold {
+    line-height: 30px;
+  }
+}

@@ -1,0 +1,117 @@
+#home {
+  height: calc(100vh - 92px);
+  max-height: 900px;
+
+  @include responsive(tablet-portrait){
+    padding-top: 0;
+    height: 500px;
+  }
+
+  @include responsive(small-phone-landscape){
+    height: 420px;
+  }
+
+  .flickity-viewport {
+    height: 100% !important;
+  }
+}
+
+.home-banner {
+  margin-top: 92px;
+
+  @include responsive(phone-landscape){
+    margin-top: 68px;
+  }
+}
+
+.intro-section {
+
+  .philTouch {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+  }
+
+  .rowCols-2__col2 {
+    width: 50%;
+  }
+
+  .intro-text-inner {
+    width: 95%;
+    max-width: 380px;
+    margin: 0 auto;
+
+    @include responsive(med-desktop) {
+      max-width: 280px;
+    }
+
+    @include responsive(tablet-portrait){
+      max-width: 100%;
+      padding: 4rem 4% 3rem 4%;
+      width: 100%;
+    }
+
+    h2 {
+
+      @include responsive(med-desktop) {
+        font-size: 42px;
+        line-height: 48px;
+      }
+
+      @include responsive(tablet-portrait){
+        font-size: 33px;
+        line-height: 36px;
+      }
+
+      @include responsive(small-phone-landscape){
+        font-size: 30px;
+        line-height: 33px;
+      }
+    }
+  }
+}
+
+.topOverlay {
+  background-color: transparent;
+  background-image: linear-gradient(180deg, $color-white 0%, rgba(255, 255, 255, 0) 100%);
+  width: 100%;
+  height: 175px;
+  position: absolute;
+  z-index: 9;
+  top: 0;
+
+  @include responsive(tablet-portrait) {
+    display: none;
+  }
+}
+
+.bottomOverlay {
+  background-color: transparent;
+  background-image: linear-gradient(0deg, $color-white 15%, rgba(255, 255, 255, 0) 100%);
+  width: 100%;
+  height: 175px;
+  position: absolute;
+  z-index: 9;
+  bottom: 0;
+
+  @include responsive(tablet-portrait) {
+    display: none;
+  }
+}
+
+.secHowOperate {
+  padding: 6rem 0 10rem !important;
+
+  @include responsive(phone-landscape){
+    padding: 4rem 0 15rem !important;
+  }
+
+  &__bgSymbols {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: 480px;
+  }
+}
+

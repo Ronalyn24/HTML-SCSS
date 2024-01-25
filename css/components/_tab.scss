@@ -1,0 +1,160 @@
+.secHowOperate .flex-ctner {
+
+  @include responsive(tablet-portrait){
+    flex-direction: column;
+  }
+}
+
+.tab-header {
+  width: 47%;
+  padding-right: 2%;
+
+  @include responsive(tablet-portrait){
+    width: 100%;
+  }
+
+  &__item {
+
+    @include responsive(tablet-portrait){
+      display: inline-block;
+      margin: 0 10px 10px 0;
+      z-index: 99;
+      position: relative;
+    }
+
+
+    &.current {
+      .btn {
+        border-bottom: 1px solid $color-black;
+        z-index: 99;
+        position: relative;
+        color: $color-black;
+      }
+    }
+
+    .btn {
+      padding: 38px 0 38px 20px;
+      display: inline-block;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-bottom: 1px solid #9b9a99;
+      border-left: 0 !important;
+      border-right: 0 !important;
+      background: transparent;
+      color: $color-black-1;
+      width: 100%;
+      text-align: left;
+
+      @include responsive(desktop){
+          font-size: 50px;
+          line-height: 50px;
+          padding: 6% 0 6% 20px;
+      }
+
+      @include responsive(very-small-desktop){
+        padding: 20px 0;
+      }
+
+      @include responsive(tablet-portrait){
+        font-size: 23px;
+        line-height: 30px;
+        padding: 11px 20px;
+        border: 1px solid !important;
+        border-radius: 50px;
+      }
+
+      @include responsive(phone-landscape){
+        font-size: 20px;
+        line-height: 30px;
+        padding: 7px 25px;
+      }
+    }
+  }
+
+  .mid-headline-bold {
+    margin-bottom: 5rem;
+
+    @include responsive(med-desktop){
+      margin-bottom: 4rem;
+    }
+
+    @include responsive(very-small-desktop){
+      margin-bottom: 3rem;
+    }
+
+    @include responsive(tablet-portrait){
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+// TAB CONTENT
+
+.tab-content {
+  width: 50%;
+  max-width: 750px;
+  padding-left: 9%;
+  padding-top: 10rem;
+  z-index: 9;
+
+  @media only screen and (max-width: 1670px) {
+    max-width: 630px;
+  }
+
+  @include responsive(very-small-desktop){
+    padding-top: 6rem;
+  }
+
+  @include responsive(tablet-portrait){
+    width: 100%;
+    padding-left: 0;
+    padding-top: 4rem;
+  }
+
+  @include responsive(phone-landscape){
+    padding-top: 2rem;
+  }
+
+  &__wrapper {
+    display: none;
+
+    &.current {
+      display: block;
+    }
+  }
+
+  .x-headline-thin {
+    font-size: 44px;
+    line-height: 52px;
+    z-index: 9;
+
+    @media only screen and (max-width: 1670px) {
+      font-size: 38px;
+      line-height: 46px;
+    }
+
+    @include responsive(med-desktop){
+      font-size: 36px;
+      line-height: 40px;
+    }
+
+    @include responsive(phone-landscape){
+      font-size: 33px;
+    }
+
+    @include responsive(small-phone-landscape){
+      font-size: 30px;
+      line-height: 36px;
+    }
+
+    @include responsive(phone-portrait){
+      font-size: 26px;
+      line-height: 30px;
+    }
+  }
+}
+
+
+
+
+

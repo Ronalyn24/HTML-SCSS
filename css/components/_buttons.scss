@@ -1,0 +1,33 @@
+button {
+  background: transparent;
+  border: none;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.aw-genBtn {
+  display: inline-block;
+  font-weight: 400;
+  font-size: 25px;
+  padding: 27px 60px;
+  color: $color-black;
+  border: 1px solid $color-black;
+
+  @media only screen and (max-width: 1670px) {
+    font-size: 22px;
+    padding: 22px 56px;
+  }
+
+  @include responsive(phone-landscape){
+    padding: 22px 30px;
+  }
+
+  @include responsive(small-phone-landscape){
+    padding: 22px 15px;
+  }
+
+  &:hover {
+    color: $color-white;
+    background-color: $color-black;
+  }
+}

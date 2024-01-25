@@ -1,0 +1,162 @@
+.aw-section.secPortfolio {
+  padding-bottom: 0;
+
+  h3.mid-headline-bold {
+    margin-bottom: 0;
+  }
+
+  .btn-container {
+    margin: 5rem 0 5rem;
+
+    @include responsive(phone-landscape){
+      margin: 3rem 0 5rem;
+    }
+  }
+}
+
+.portfolio {
+  padding: 0 0 6rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 60px;
+  row-gap: 3.5rem;
+
+  @include responsive(small-desktop){
+    column-gap: 35px;
+    row-gap: 2.5rem;
+  }
+
+  @include responsive(very-small-desktop){
+    column-gap: 20px;
+  }
+
+  @include responsive(tablet-portrait){
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include responsive(phone-medium){
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  &--firstRow {
+    padding: 4% 0 0;
+  }
+
+  &--secondRow {
+    display: grid;
+    height: 0;
+    opacity: 0;
+    margin-top: 3.5rem;
+    padding-bottom: 4rem;
+    transition: all 0.6s ease-in-out;
+
+    @media only screen and (max-width: 1680px) {
+      margin-top: 0;
+    }
+
+    @include responsive(small-desktop){
+      padding: 1rem 0 0;
+    }
+  }
+
+  &__thumbnail {
+    margin-bottom: 25px;
+    position: relative;
+    padding-top: 115%;
+  }
+
+  &__image {
+    @include image-object-fit;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+  }
+
+  &__title {
+    line-height: 22px;
+    margin-bottom: 10px;
+    @include flex;
+
+    @media only screen and (max-width: 1670px) {
+      font-size: 22px;
+    }
+
+    @include responsive(small-desktop){
+      font-size: 20px;
+    }
+
+    @include responsive(phone-landscape){
+      font-size: 18px;
+    }
+  }
+
+  &__short-desc {
+    @media only screen and (max-width: 1670px) {
+      font-size: 16px;
+    }
+
+    @include responsive(phone-landscape){
+      font-size: 18px;
+      line-height: 25px;
+    }
+  }
+
+  &__rightArrow {
+    margin-left: 10px;
+    max-width: 35px;
+
+    @include responsive(phone-landscape){
+      display: none;
+    }
+  }
+
+  &__item {
+    margin-bottom: 3%;
+  }
+}
+
+
+.showSecondRow {
+  height: auto;
+  opacity: 1;
+  padding-bottom: 6rem;
+}
+
+.hideButton {
+  display: none;
+}
+
+
+.aw-row-fullwidth.textQuote {
+  padding: 3rem 9%;
+  background: image('quote-bck.jpg') no-repeat center center / cover;
+  border-top: 1px solid $color-black;
+  border-bottom: 1px solid $color-black;
+}
+
+.textQuote {
+  &__quote {
+    font-size: 36px;
+    line-height: 39px;
+    font-style: italic;
+    font-family: $maison-neue-light;
+
+    @include responsive(phone-portrait) {
+      font-size: 28px;
+      line-height: 35px;
+    }
+  }
+
+  &__author {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: $maison-neue-bold;
+
+    @include responsive(phone-portrait) {
+      font-size: 18px;
+    }
+  }
+}

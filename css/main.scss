@@ -1,0 +1,28 @@
+@import "abstracts/_variables.scss";
+@import "abstracts/_mixins.scss";
+@import "abstracts/_animations.scss";
+@import "abstracts/_media-queries.scss";
+
+
+@import "base/_reset.scss";
+@import "base/_typography.scss";
+
+@import "components/_banner.scss";
+@import "components/_buttons.scss";
+@import "components/_forms.scss";
+@import "components/_philosopy-img.scss";
+@import "components/_slider.scss";
+@import "components/_tab.scss";
+@import "components/_portfolio.scss";
+@import "components/_our-team.scss";
+@import "components/_lightbox.scss";
+
+
+@import "pages/_home.scss";
+
+@import "layout/_footer.scss";
+@import "layout/_grid.scss";
+@import "layout/_header.scss";
+
+
+

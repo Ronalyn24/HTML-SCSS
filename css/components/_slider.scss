@@ -1,0 +1,211 @@
+.bannerCarousel {
+  position: relative;
+
+  &__cell {
+    @include flex;
+    @include align-content-center;
+    @include justify-center;
+    width: 100%;
+    height: 100%;
+    max-height: calc(100vh - 92px);
+    left: inherit !important;
+  }
+
+  &__cell-image {
+    max-height: 100%;
+    width: 100%;
+    @include image-object-fit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+  }
+
+  h2 {
+    font-family: $maison-neue-bold;
+    position: absolute;
+    width: 96%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    color: $color-white;
+    font-size: 60px;
+    font-weight: 800;
+    text-align: center;
+    letter-spacing: 1px;
+
+    @include responsive(phone-landscape){
+      font-size: 40px;
+    }
+
+    @include responsive(phone-portrait) {
+      font-size: 32px;
+    }
+
+    span {
+      display: inline-block;
+      border-bottom: 5px solid $color-white;
+    }
+
+    &.normal-case {
+      //max-width: 940px;
+      text-transform: none;
+    }
+  }
+
+  .cell-logo {
+    position: absolute;
+    width: 80%;
+    max-width: 570px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: invert(1);
+  }
+}
+
+
+.touchCapSlider {
+  padding: 75px 0;
+  position: relative;
+
+  @include responsive(phone-landscape){
+    padding: 50px 0;
+  }
+
+  .flickity-page-dots {
+    bottom: 0;
+    z-index: 99;
+    display: none;
+
+    @include responsive(phone-landscape){
+      display: block;
+    }
+
+    .dot {
+      width: 15px;
+      height: 15px;
+    }
+  }
+}
+
+.tc-carousel {
+  padding: 58px 0 65px;
+
+  @include responsive(phone-landscape){
+    padding: 25px 0 60px;
+  }
+
+  &__cell {
+    width: 75%;
+    padding: 0 4%;
+
+    @include responsive(phone-landscape){
+      width: 80%;
+      padding: 0 2%;
+    }
+  }
+
+  &__bgImg {
+    @include image-object-fit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+  }
+
+  &__content {
+    position: relative;
+    min-height: 570px;
+    height: 100%;
+    padding: 40px 8%;
+    color: $color-white;
+    overflow: hidden;
+
+    @include responsive(small-phone-landscape){
+      min-height: 410px;
+    }
+  }
+
+  &__headline {
+    margin-bottom: 5%;
+
+    &.xx-headline-bold {
+
+      font-size: 81px;
+      line-height: 83px;
+
+      @include responsive(med-desktop){
+        font-size: 66px;
+        line-height: 66px;
+      }
+
+      @include responsive(tablet-landscape){
+        font-size: 55px;
+        line-height: 55px;
+      }
+
+      @include responsive(small-phone-landscape){
+        font-size: 28px;
+        line-height: 34px;
+      }
+    }
+
+    .cell-2 & {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__sub-text {
+    font-weight: bold;
+    margin-bottom: 5%;
+
+    &.p-mid-thin {
+      @include responsive(small-phone-landscape){
+     
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
+  }
+
+  &__text {
+    max-width: 790px;
+
+    &.p-mid-thin {
+
+      @include responsive(small-phone-landscape){
+        line-height: 24px;
+        font-size: 16px;
+        text-align: left;
+      }
+    }
+  }
+}
+
+.slider-btn-control {
+  @include flex;
+  @include justify-space-between;
+
+  @include responsive(phone-landscape){
+    display: none;
+  }
+
+  .button {
+    position: absolute;
+    top: 52%;
+    font-size: 55px;
+    cursor: pointer;
+
+    &.button--previous {
+      left: 6%;
+    }
+
+    &.button--next {
+      right: 6%;
+    }
+  }
+}

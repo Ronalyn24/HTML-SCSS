@@ -1,0 +1,274 @@
+
+
+@font-face {
+    font-family: 'maison_neuelight';
+    src: font('maisonneue-light-webfont.woff2') format('woff2'),
+         font('maisonneue-light-webfont.woff') format('woff'),
+         font('MaisonNeue-Light.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'maison_neuebold';
+    src: font('maisonneue-bold-webfont.woff2') format('woff2'),
+         font('maisonneue-bold-webfont.woff') format('woff'),
+         font('MaisonNeue-Bold.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'maison_neuemedium';
+    src: font('maisonneue-medium-webfont.woff2') format('woff2'),
+         font('maisonneue-medium-webfont.woff') format('woff'),
+         font('MaisonNeue-Medium.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/*=======================================
+ Font Sizes
+========================================*/
+
+body {
+    font-family: $maison-neue-light;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+
+    @include responsive(phone-portrait){
+        font-size: 17px;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    line-height: 1.04;
+    margin-bottom: 16px;
+    margin-top: 0;
+    display: block;
+}
+
+a {
+    @include transition-2s-ease-in-out;
+}
+
+p:not(:last-child) {
+    margin-bottom: 25px;
+}
+
+// this is for the HEADLINES
+
+.xx-headline-bold {
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 80px;
+    font-family: $maison-neue-bold;
+    text-transform: uppercase;
+
+    @media only screen and (max-width: 1670px) {
+        font-size: 66px;
+    }
+
+    @include responsive(med-desktop){
+        font-size: 60px;
+    }
+
+    @include responsive(tablet-portrait){
+        font-size: 53px;
+        line-height: 53px;
+    }
+
+    @include responsive(phone-landscape){
+        font-size: 45px;
+        line-height: 45px;
+    }
+
+    @include responsive(small-phone-landscape){
+        font-size: 40px;
+    }
+
+    @include responsive(phone-portrait){
+        font-size: 36px;
+        line-height: 40px;
+    }
+}
+
+.x-headline-thin {
+    font-weight: 300;
+    font-size: 59px;
+    line-height: 68px;
+    font-family: $maison-neue-light;
+
+    @include responsive(med-desktop){
+        font-size: 50px;
+        line-height: 55px;  
+    }
+}
+
+.mid-headline-bold {
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 55px;
+    font-family: $maison-neue-bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    @include responsive(x-med-desktop) {
+        font-size: 18px;
+    }
+}
+
+.vs-headline-thin {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+}
+
+// this is for the PARAGRAPH
+
+.p-large-thin {
+    font-weight: 300;
+    font-size: 44px;
+    line-height: 52px;
+}
+
+.p-mid-thin {
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 33px;
+
+    @include responsive(tablet-portrait){
+        font-size: 22px;
+        line-height: 30px;
+    }
+
+    @include responsive(phone-landscape){ 
+        font-size: 20px;
+    }
+
+    @include responsive( phone-portrait){
+        font-size: 18px;
+    }
+}
+
+.p-small-thin {
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 21px;
+}
+
+
+/*=======================================
+    Alignment
+========================================*/
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+
+/*=======================================
+   ColoRs
+========================================*/
+.text-white {
+    color: $color-white;
+}
+
+.bg-light-grey {
+    background-color: $color-trans-light-grey;
+}
+
+.bg-white {
+    background-color: $color-white;
+}
+
+
+/*=======================================
+   Spacing
+========================================*/
+.no-sec-spacing {
+    padding: 0 0 !important;
+}
+
+.no-b-margin {
+    margin-bottom: 0;
+}
+
+.max-width-ctrl {
+    max-width: var(--max-width);
+
+    @include responsive(tablet-portrait){
+        max-width: 100%;
+    }
+}
+
+/*=======================================
+    Container Positions
+========================================*/
+.flex-ctner-column {
+    @include flex;
+    flex-direction: column;
+}
+
+.flex-ctner {
+    @include flex;
+
+    @include responsive(phone-landscape){
+        flex-direction: column;
+    }
+}
+
+.content-top-left {
+    @include align-items-start;
+    @include justify-start;
+}
+
+.content-top-center {
+    @include align-items-start;
+    @include justify-center;
+}
+
+.content-top-right {
+    @include align-items-start;
+    @include justify-end;
+}
+
+.content-middle-left {
+    @include align-items-center;
+    @include justify-start;
+}
+
+.content-middle-center {
+    @include align-items-center;
+    @include justify-center;
+}
+
+.content-middle-right {
+    @include align-items-center;
+    @include justify-end;
+}
+
+.content-bottom-left {
+    @include align-items-end;
+    @include justify-start;
+}
+
+.content-bottom-center {
+    @include align-items-end;
+    @include justify-center;
+}
+
+.content-bottom-right {
+    @include align-items-end;
+    @include justify-end;
+}
+
+.normal-case {
+    text-transform: lowercase;
+}

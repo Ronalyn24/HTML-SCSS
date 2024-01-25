@@ -1,0 +1,254 @@
+/*==================================
+  POPUP
+====================================*/
+ 
+html.lightbox-open {
+  overflow-y: hidden;
+}
+
+.popupCtn {
+  position: relative;
+  z-index: 99999;
+
+  &__item {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    @include justify-center;
+    @include align-content-center;
+    background-color: $color-black-2;
+    position: relative;
+    z-index: 99999;
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0s ease-in;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+
+    &:target {
+        position: fixed;
+        @include flex;
+        opacity: 1;
+        visibility: visible;
+        transition: all 0.2s ease-in;
+        @include align-items-center;
+    }
+  
+    html.hide-lightbox & {
+        display: none;
+    }
+  }
+
+  &__closeIcon {
+    width: 50px;
+  }
+
+  &__wrapper {
+    width: 90%;
+    height: 90%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 5%;
+    z-index: 999;
+    background-color: $color-white;
+    position: relative;
+
+    @include responsive(very-small-desktop){
+      padding: 3rem 40px;
+    }
+
+    @include responsive(phone-portrait) {
+      padding-top: 80px;
+    }
+  }
+
+  &__bckClose {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    padding: 0.3rem;
+    line-height: 1;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50px;
+    z-index: 99999;
+    @include transform(rotate(45deg));
+   
+    &:focus {
+        outline: 0;
+    }
+  
+    @include responsive(tablet-portrait){
+        top: 5px;
+        right: 20px;
+    }
+  
+    @include responsive(phone-portrait) {
+        display: block;
+        top: 10px;
+        right: 15px;
+    }
+  }
+
+  &__bckClose {
+    display: block;
+  }
+
+  &__bckCloseBg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    outline: 0;
+    z-index: -1;
+    left: 0;
+    top: 0;
+  }
+}
+
+
+.lightInnCtner {
+  @include flex;
+  height: auto;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding-bottom: 4px;
+  padding-right: 1rem;
+
+  @include responsive(tablet-portrait){
+    flex-direction: column;
+  }
+
+  &__item {
+    width: 60%;
+
+    @include responsive(tablet-portrait){
+      width: 100%;
+    }
+
+    &.first {
+      width: 36%;
+      margin-right: 6%;
+      position: relative;
+
+      @include responsive(tablet-portrait){
+        width: 100%;
+        margin-right: 0;
+      }
+
+      .largeImg {
+        @include image-object-fit;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+
+        @include responsive(tablet-portrait){
+          width: 335px;
+          height: auto;
+          position: relative;
+          margin: 0 auto 35px;
+        }
+      }
+    }
+
+    .x-headline-thin {
+      font-size: 57px;
+      margin-bottom: 0;
+      line-height: 57px;
+
+      @include responsive(med-desktop){
+        font-size: 53px;
+        line-height: 53px;
+      }
+
+      @include responsive(desktop){
+        font-size: 46px;
+        line-height: 44px;
+      }
+
+      @include responsive(very-small-desktop){
+        font-size: 40px;
+        line-height: 40px;
+      }
+
+      @include responsive(tablet-portrait){
+        font-size: 33px;
+        line-height: 33px;
+        margin-bottom: 20px;
+      }
+
+      br {
+        @include responsive(tablet-portrait){
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__innerContent {
+    @include flex;
+    gap: 8%;
+
+    @include responsive(tablet-portrait){
+      gap: 6%;
+    }
+
+    @include responsive(small-phone-landscape){
+      gap: 0;
+      flex-direction: column;
+    }
+
+    .content {
+      flex: 0 0 46%;
+
+      @include responsive(small-phone-landscape){
+        flex: 0 0 100%;
+      }
+
+      .p-small-thin {
+        @include responsive(med-desktop){
+          font-size: 15px;
+        }
+      }
+    }
+
+    &.headline {
+      @include align-items-end;
+      margin-bottom: 2.4rem;
+
+      @include responsive(tablet-portrait){
+        display: block;
+        text-align: center;
+      }
+
+      .socialMedia.content {
+        @include responsive(tablet-portrait){
+          max-width: 335px;
+          margin: 0 auto;
+        }
+      }
+
+      .content {
+        @include responsive(tablet-portrait){
+          flex: 0 0 100%;
+        }
+      }
+    }
+  }
+
+  .socialMedia {
+
+    a, span {
+      text-transform: uppercase;
+      font-size: 17px;
+      padding: 10px 0;
+    }
+  }
+}
+
+

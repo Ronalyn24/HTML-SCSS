@@ -1,0 +1,124 @@
+.main-wrapper {
+    max-width: 1920px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.aw-section {
+    padding: 6rem 0;
+    position: relative;
+
+    @include responsive(small-phone-landscape){
+        padding: 4rem 0 4.6rem;
+    }
+
+    @include responsive(phone-landscape){
+        padding: 4rem 0;
+    }
+}
+
+.aw-row {
+    position: relative;
+    width: 100%;
+    max-width: auto;
+    margin: 0 auto;
+}
+
+.aw-row-fullwidth {
+    position: relative;
+    padding: 0 9%;
+
+    @include responsive(med-desktop) {
+        padding: 0 4%;
+    }
+}
+
+[class^="col-"] {
+    
+    &:not(:last-child) {
+        margin-right: 2rem;
+    }
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+
+.rowCols-2, .rowCols-3, .rowCols-4, .row-mix {
+    @include flex;
+    @include justify-space-between;
+    flex-direction: row; 
+}
+
+.rowCols-2 {
+
+    @include responsive(tablet-portrait){
+        flex-direction: column; 
+    }
+
+    &__col2 {
+        width: calc((100% - #{$spacing-horizontal}) / 2);   
+        
+        @include responsive(tablet-portrait){
+            width: 100% !important;
+        }
+    }
+}
+
+.rowCols-3 {
+
+    @include responsive(phone-landscape){
+        flex-direction: column;  
+    }
+
+    &__col3 {
+        width: calc((100% - 2 * #{$spacing-horizontal}) / 3);
+
+        @include responsive(phone-landscape){
+            width: 100%;
+            margin: 0 auto 30px;  
+        }
+    }
+}
+
+.rowCols-4 {
+
+    &__col4 {
+        width: calc((100% - 3 * #{$spacing-horizontal}) / 4);
+    }
+}
+
+
+.row-mix {
+
+    @include responsive(phone-landscape){
+        flex-direction: column; 
+    }
+
+    .col-1-of-3 {
+        width: calc((100% - 2 * #{$spacing-horizontal}) / 3);
+    
+        @include responsive(phone-landscape){
+            width: 100%;
+        }
+    }
+
+    .col-2-of-3 {
+        width: calc(2 * ((100% - 2 * #{$spacing-horizontal}) / 3) + #{$spacing-horizontal});
+        
+        @include responsive(phone-landscape){
+            width: 100%;
+        }
+    }
+
+    .col-1-of-4 {
+        width: calc((100% - 3 * #{$spacing-horizontal}) / 4);
+    }
+
+    .col-3-of-4 {
+        width: calc(3 * ((100% - 3 * #{$spacing-horizontal}) / 4) + 2 * #{$spacing-horizontal});
+    }
+}
+
+
+

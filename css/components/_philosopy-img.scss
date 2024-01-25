@@ -1,0 +1,77 @@
+.philCtner {
+  @include flex-wrap;
+  @include align-items-start;
+  position: relative;
+  padding-right: 9%;
+  padding-left: 2%;
+
+  @include responsive(tablet-portrait){
+    padding: 0;
+  }
+
+  &__list {
+    flex: 0 0 50%;
+    padding-right: 17px;
+
+    @include responsive(tablet-landscape){
+      padding-right: 10px;
+    }
+
+    @include responsive(phone-portrait){
+      padding-right: 7px;
+    }
+
+    &.last-child {
+      padding-left: 17px;
+      padding-right: 0;
+
+      @include responsive(tablet-landscape){
+        padding-left: 10px;
+      }
+
+      @include responsive(phone-portrait){
+        padding-left: 7px;
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+    margin-bottom: 30px;
+
+    @include responsive(tablet-landscape){
+      margin-bottom: 23px;
+    }
+
+    @include responsive(phone-portrait){
+      margin-bottom: 15px;
+    }
+
+    &--small {
+      padding-top: 53%;
+    }
+
+    &--medium {
+      padding-top: 90%;
+    }
+
+    &--large {
+      padding-top: 145%;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    max-width: 700px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+  }
+}
