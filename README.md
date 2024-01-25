@@ -1,1 +1,1 @@
-Convert them mockup design to HTML&SCSS
+Example convert design to HTML&SCSS
